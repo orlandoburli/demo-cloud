@@ -1,0 +1,26 @@
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5402/products
+    username: postgres
+    password: S3hYyShtrrP8NApU
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+  application:
+    name: products
+
+server:
+  port: 0
+  
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true

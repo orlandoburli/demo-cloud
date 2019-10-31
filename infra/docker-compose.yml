@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  customers-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "mNK2AhLReAz9xPgm"
+      POSTGRES_DB: "customers"
+    ports:
+      - "5401:5432"
+    volumes:
+      - ./data/customers:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+    
+  products-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "S3hYyShtrrP8NApU"
+      POSTGRES_DB: "products"
+    ports:
+      - "5402:5432"
+    volumes:
+      - ./data/products:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+  
+  orders-db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "3mvarb2Ms4rBbMnv"
+      POSTGRES_DB: "orders"
+    ports:
+      - "5403:5432"
+    volumes:
+      - ./data/orders:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "orlando.burli@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "JGSaFb2YbmhsN4Yb"
+    ports:
+      - "5400:80"
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json
+    depends_on:
+      - customers-db
+      - products-db
+      - orders-db
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge

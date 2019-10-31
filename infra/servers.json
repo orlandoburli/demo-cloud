@@ -1,0 +1,34 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Customers DB Server",
+            "Group": "Cloud Demo",
+            "Port": 5432,
+            "Username": "postgres",
+            "Host": "customers-db",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres",
+            "Password": "mNK2AhLReAz9xPgm"
+        },
+        "2": {
+            "Name": "Products DB Server",
+            "Group": "Cloud Demo",
+            "Port": 5432,
+            "Username": "postgres",
+            "Host": "products-db",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres",
+            "Password": "S3hYyShtrrP8NApU"
+        },
+        "3": {
+            "Name": "Orders DB Server",
+            "Group": "Cloud Demo",
+            "Port": 5432,
+            "Username": "postgres",
+            "Host": "orders-db",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres",
+            "Password": "3mvarb2Ms4rBbMnv"
+        }
+    }
+}
