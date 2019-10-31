@@ -34,3 +34,6 @@ build/
 
 infra/data
 infra/pgadmin
+
+*.log
+*.out
